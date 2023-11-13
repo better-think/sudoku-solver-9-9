@@ -25,24 +25,33 @@ Provide a link or embed a demo of your Sudoku Solver in action.
 This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve Sudoku puzzles. Here's a brief overview of how the solver works:
 
 1. **Input Grid:**
+
    - The solver takes a partially filled Sudoku grid as input, with empty cells represented by zeros.
 
 2. **Backtracking Algorithm:**
+
    - It employs a recursive backtracking algorithm to explore possible solutions.
    - The solver starts from the first empty cell and attempts to fill it with a valid digit (1 to 9).
    - If a digit is valid for the current cell, it moves on to the next empty cell.
    - If a digit is not valid, it backtracks to the previous cell and tries a different digit.
 
 3. **Validation:**
+
    - The solver validates each digit placement against the Sudoku rules (no repeated digits in rows, columns, and subgrids).
 
    ```typescript
    usedInRow(board: number[][], row: number, num: number) {
     return board[row].includes(num);
-  }
+   }
+   ```
+
+  ```typescript
   usedInCol(board: number[][], col: number, num: number) {
     return board.some((row) => row[col] === num);
   }
+  ```
+
+  ```typescript
   usedInSubgrid(
     board: number[][],
     startRow: number,
@@ -63,30 +72,29 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
 4. **Completion:**
    - The process continues until the entire grid is filled, and a valid solution is found.
 
-
 Feel free to explore the source code in the `app/` directory for more details on the implementation.
 
 ## Installation
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/your-username/sudoku-solver.git
-    ```
+   ```bash
+   git clone https://github.com/your-username/sudoku-solver.git
+   ```
 
 2. Install dependencies:
 
-    ```bash
-    cd sudoku-solver
-    npm install
-    ```
+   ```bash
+   cd sudoku-solver
+   npm install
+   ```
 
 ## Usage
 
 1. Start the development server:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 2. Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the app.
