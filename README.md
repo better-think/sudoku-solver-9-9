@@ -43,9 +43,11 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
    usedInRow(board: number[][], row: number, num: number) {
     return board[row].includes(num);
    }
+
    usedInCol(board: number[][], col: number, num: number) {
     return board.some((row) => row[col] === num);
    }
+   
    usedInSubgrid(
     board: number[][],
     startRow: number,
@@ -64,7 +66,33 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
    ```
 
 4. **Completion:**
+
    - The process continues until the entire grid is filled, and a valid solution is found.
+
+   ```typescript
+   solveSudoku(board: number[][]) {
+   const emptyCell = this.findEmptyCell(board);
+   if (!emptyCell) {
+     return true;
+   }
+
+   const [row, col] = emptyCell;
+
+   for (let num = 1; num <= 9; num++) {
+     if (this.isSafe(board, row, col, num)) {
+       board[row][col] = num;
+
+       if (this.solveSudoku(board)) {
+         return true;
+       }
+
+       board[row][col] = 0;
+     }
+   }
+
+   return false;
+   }
+   ```
 
 Feel free to explore the source code in the `app/` directory for more details on the implementation.
 
