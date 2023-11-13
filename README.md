@@ -11,7 +11,8 @@ A Sudoku Solver web application built with Next.js and Sass.
 
 ## Demo
 
-Provide a link or embed a demo of your Sudoku Solver in action.
+Provide a link or embed a demo of your Sudoku Solver in action. 
+[https://sudoke-solver.vercel.app/](https://sudoke-solver.vercel.app/) 
 
 ## Features
 
@@ -47,7 +48,7 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
    usedInCol(board: number[][], col: number, num: number) {
     return board.some((row) => row[col] === num);
    }
-   
+
    usedInSubgrid(
     board: number[][],
     startRow: number,
