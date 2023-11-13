@@ -40,11 +40,9 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
    usedInRow(board: number[][], row: number, num: number) {
     return board[row].includes(num);
   }
-
   usedInCol(board: number[][], col: number, num: number) {
     return board.some((row) => row[col] === num);
   }
-
   usedInSubgrid(
     board: number[][],
     startRow: number,
