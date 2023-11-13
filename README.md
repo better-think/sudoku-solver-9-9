@@ -11,7 +11,6 @@ A Sudoku Solver web application built with Next.js and Sass.
 
 ## Demo
 
-Provide a link or embed a demo of your Sudoku Solver in action. 
 [https://sudoke-solver.vercel.app/](https://sudoke-solver.vercel.app/) 
 
 ## Features
