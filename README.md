@@ -43,21 +43,15 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
    usedInRow(board: number[][], row: number, num: number) {
     return board[row].includes(num);
    }
-   ```
-
-  ```typescript
-  usedInCol(board: number[][], col: number, num: number) {
+   usedInCol(board: number[][], col: number, num: number) {
     return board.some((row) => row[col] === num);
-  }
-  ```
-
-  ```typescript
-  usedInSubgrid(
+   }
+   usedInSubgrid(
     board: number[][],
     startRow: number,
     startCol: number,
     num: number
-  ) {
+   ) {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         if (board[startRow + i][startCol + j] === num) {
@@ -66,8 +60,8 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
       }
     }
     return false;
-  }
-  ```
+   }
+   ```
 
 4. **Completion:**
    - The process continues until the entire grid is filled, and a valid solution is found.
