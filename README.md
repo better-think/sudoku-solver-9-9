@@ -36,7 +36,7 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
 3. **Validation:**
    - The solver validates each digit placement against the Sudoku rules (no repeated digits in rows, columns, and subgrids).
 
-   ```
+   ```typescript
    usedInRow(board: number[][], row: number, num: number) {
     return board[row].includes(num);
   }
@@ -58,7 +58,7 @@ This Sudoku Solver uses a [insert algorithm name] algorithm to efficiently solve
     }
     return false;
   }
-   ```
+  ```
 
 4. **Completion:**
    - The process continues until the entire grid is filled, and a valid solution is found.
