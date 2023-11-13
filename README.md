@@ -120,3 +120,7 @@ Feel free to explore the source code in the `app/` directory for more details on
    ```
 
 2. Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the app.
+
+3. You can input sodoku values by double click each cells.
+
+4. Then click solve to solve the puzzle.
