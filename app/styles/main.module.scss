@@ -1,0 +1,81 @@
+// styles/main.module.scss
+.sudoku-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sudoku-main-title {
+  display: block;
+}
+
+.sudoku-board {
+
+
+}
+
+.sudoku-row {
+  display: grid;
+  grid-template-columns: repeat(9, 60px);
+  grid-gap: 1px; // Add grid-gap for cell spacing
+}
+
+.sudoku-row:not(:last-child):nth-child(3n+3) {
+  border-bottom: 2px solid #000; /* Enhance border for every 3 rows except the last one */
+}
+
+.sudoku-row > div:not(:last-child):nth-child(3n+3) {
+  border-right: 2px solid #000; /* Enhance border for every 3 columns except the last one */
+}
+
+.sudoku-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.sudoku-cell-edited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  background-color: antiquewhite;
+}
+
+.sudoku-cell-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+}
+
+.control-button-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sudoku-solve-button {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+
+.sudoku-reset-button {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
