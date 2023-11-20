@@ -1,4 +1,12 @@
 export class Sudoku {
+
+  findAllSolutions(board: number[][]): number[][][] {
+    const solutions: number[][][] = [];
+    this.solveSudoku(board, solutions);
+    console.log('123');
+    return solutions;
+  }
+
   usedInRow(board: number[][], row: number, num: number) {
     return board[row].includes(num);
   }
@@ -89,12 +97,6 @@ export class Sudoku {
     return null;
   }
 
-  isValidMove(board: number[][], row: number, col: number, num: number) {
-    const tempBoard = JSON.parse(JSON.stringify(board));
-    tempBoard[row][col] = 0;
-    return this.solveSudoku(tempBoard);
-  }
-
   fillRandomRecursively(board: number[][]) {
     for (let row = 0; row < 9; row++) {
       for (let col = 0; col < 9; col++) {
@@ -127,7 +129,7 @@ export class Sudoku {
     return true;
   }
 
-  solveSudoku(board: number[][]) {
+  solveSudoku(board: number[][], solutions: number[][][]) {
     const emptyCell = this.findEmptyCell(board);
     if (!emptyCell) {
       return true;
@@ -139,15 +141,11 @@ export class Sudoku {
       if (this.isSafe(board, row, col, num)) {
         board[row][col] = num;
 
-        if (this.solveSudoku(board)) {
-          return true;
-        }
+        this.solveSudoku(board, solutions);
 
         board[row][col] = 0;
       }
     }
-
-    return false;
   }
 }
 

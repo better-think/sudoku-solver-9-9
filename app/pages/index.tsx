@@ -2,7 +2,7 @@
 
 import React from "react";
 import SudokuBoard from "../components/SudokuBoard";
-import styles from "../styles/main.module.scss";
+import styles from "../styles/main.module.sass";
 
 const SudokuHome = () => {
   return (

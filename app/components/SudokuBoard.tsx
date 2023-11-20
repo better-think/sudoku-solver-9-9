@@ -2,11 +2,12 @@
 // components/SudokuBoard.js
 import React, { useEffect, useState } from "react";
 import SudokuCell from "./SudokuCell";
-import styles from "../styles/main.module.scss";
+import styles from "../styles/main.module.sass";
 import sudoku from "../module/sudoku";
 
 const SudokuBoard = () => {
   const [board, setBoard] = useState<number[][]>(initializeBoard);
+  const [solutions, setSolutions] = useState<number[][][]>();
   function initializeBoard() {
     return Array.from({ length: 9 }, () => Array(9).fill(0));
   }
@@ -29,8 +30,8 @@ const SudokuBoard = () => {
     const newBoard = JSON.parse(JSON.stringify(board));
 
     if (sudoku.isBoardValid(newBoard)) {
-      if (sudoku.solveSudoku(newBoard)) {
-        setBoard(newBoard);
+      if (sudoku.findAllSolutions(newBoard)) {
+        console.log(sudoku.findAllSolutions(newBoard));
       } else {
         alert("No Solution");
       }

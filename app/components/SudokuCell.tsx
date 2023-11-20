@@ -1,7 +1,7 @@
 // components/SudokuCell.tsx
 
 import React, { useEffect, useState } from "react";
-import styles from "../styles/main.module.scss";
+import styles from "../styles/main.module.sass";
 
 interface SudokuCellProps {
   value: number;
